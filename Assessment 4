@@ -1,4 +1,0 @@
-SELECT student_name, marks
-FROM your_table_name
-ORDER BY marks DESC
-LIMIT 3;
