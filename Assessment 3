@@ -1,0 +1,14 @@
+from collections import Counter
+
+def top_k_frequent_items(lst, k):
+    counts = Counter(lst)
+    sorted_items = sorted(counts.items(), key=lambda x: x[1], reverse=True)
+    top_k_items = sorted_items[:k]
+    
+    return top_k_items
+lst = input("Enter the list of items separated by space: ").split()
+k = int(input("Enter the value of K: "))
+top_k_items = top_k_frequent_items(lst, k)
+print(f"Top {k} frequent items:")
+for item, freq in top_k_items:
+    print(f"Item: {item}, Frequency: {freq}")
