@@ -1,0 +1,25 @@
+student_table = [
+    (1, 'John', 75),
+    (2, 'Emily', 80),
+    (3, 'Michael', 60),
+    (4, 'Sophia', 90),
+    (5, 'Jacob', 70),
+    (6, 'Emma', 85),
+    (7, 'William', 55),
+    (8, 'Olivia', 95),
+    (9, 'James', 65),
+    (10, 'Ava', 88)
+]
+sorted_student_table = sorted(student_table, key=lambda x: x[2])
+total_students = len(sorted_student_table)
+quartile_size = total_students // 4
+quartiles = ['Q1', 'Q2', 'Q3', 'Q4']
+for i, quartile in enumerate(quartiles):
+    start_index = i * quartile_size
+    end_index = (i + 1) * quartile_size if i < 3 else total_students
+    quartile_students = sorted_student_table[start_index:end_index]
+    
+    print(f"Quartile {quartile}:")
+    for student in quartile_students:
+        print(f"Student ID: {student[0]}, Name: {student[1]}, Marks: {student[2]}")
+    print()
